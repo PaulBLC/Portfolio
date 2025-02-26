@@ -2,7 +2,7 @@ import { Container } from "lucide-react"
 
 const Navbar = () => {
     return (
-        <div className="flex justify-center md:justify-between items-center p-4 ">
+        <div className="fixed top-0 left-0 right-0 w-full flex justify-center md:justify-between items-center p-4">
             <a href="#"
                 className="flex items-center  font-bold  text-3xl md:text-xl"
             >
