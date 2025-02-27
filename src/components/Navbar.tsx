@@ -1,14 +1,14 @@
-import { Container } from "lucide-react"
+import { ChartNetwork } from "lucide-react"
 
 const Navbar = () => {
     return (
-        <div className="fixed top-0 left-0 right-0 w-full flex justify-center md:justify-between items-center p-4">
+        <div className="md:fixed top-0 left-0 right-0 w-full flex justify-center md:justify-between items-center p-1 md:p-4">
             <a href="#"
-                className="flex items-center  font-bold  text-3xl md:text-xl"
+                className="flex items-center  font-bold  text-3xl md:text-4xl"
             >
-                <Container className="mr-2" />
-                LUC
-                <span className="text-accent">DEV</span>
+                <ChartNetwork className="mr-2" />
+                <span className="text-accent">PAUL</span>
+                BLANC
             </a>
 
             <ul

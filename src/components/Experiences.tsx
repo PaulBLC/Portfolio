@@ -8,11 +8,16 @@ import imgNEXT from "../assets/techno/next-js.webp";
 import imgNODE from "../assets/techno/node-js.png";
 import imgTYPE from "../assets/techno/typescript.svg";
 import imgTAILWIND from "../assets/techno/tailwind.png";
-import imgPRISMA from "../assets/techno/prisma.webp";
+import imgR from "../assets/techno/r.png";
+import imgQLIK from "../assets/techno/qlik.png";
+import imgPYHTON from "../assets/techno/python.png";
+import imgPOWERBI from "../assets/techno/power_bi.png";
+import imgEXCEL from "../assets/techno/excel.png";
+import imgTABLEAU from "../assets/techno/tableau.svg";
+import imgSQL from "../assets/techno/sql.png";
 
-import google from "../assets/companies/google.png";
-import meta from "../assets/companies/meta.webp";
-import amazon from "../assets/companies/amazon.png";
+import isd from "../assets/companies/isd.png";
+import seb from "../assets/companies/seb.png";
 
 
 
@@ -25,7 +30,13 @@ const skills = [
     { id: 6, name: "Tailwind CSS", image: imgTAILWIND },
     { id: 7, name: "TypeScript", image: imgTYPE },
     { id: 8, name: "Next.js", image: imgNEXT },
-    { id: 9, name: "Prisma", image: imgPRISMA },
+    { id: 10, name: "R", image: imgR },
+    { id: 11, name: "Qlik", image: imgQLIK },
+    { id: 12, name: "Python", image: imgPYHTON },
+    { id: 13, name: "PowerBI", image: imgPOWERBI },
+    { id: 15, name: "Excel & VBA", image: imgEXCEL },
+    { id: 16, name: "Tableau", image: imgTABLEAU },
+    { id: 17, name: "SQL", image: imgSQL },
 ];
 
 
@@ -33,13 +44,13 @@ const experiences = [
     {
         id: 1,
         role: "Software Engineer",
-        company: "Google",
+        company: "ISD",
         period: "Sep 2022 - Présent",
         description: [
             "Développement de nouvelles fonctionnalités pour Google Maps.",
             "Optimisation des performances de l'application.",
         ],
-        image: google,
+        image: isd,
     },
     {
         id: 2,
@@ -50,18 +61,7 @@ const experiences = [
             "Création d'une plateforme interne de collaboration pour les équipes.",
             "Mise en place d'une architecture scalable et optimisée.",
         ],
-        image: meta,
-    },
-    {
-        id: 3,
-        role: "Frontend Developer",
-        company: "Amazon",
-        period: "Mai 2019 - Déc 2020",
-        description: [
-            "Développement d'une interface utilisateur pour Amazon Web Services.",
-            "Implémentation des tests unitaires et E2E.",
-        ],
-        image: amazon,
+        image: seb,
     },
 ];
 
@@ -72,7 +72,7 @@ const Experiences = () => {
         <div id="Experiences">
             <Title title="Expériences" />
             <div className="flex  flex-col-reverse md:flex-row justify-center items-center">
-                <div className="flex flex-wrap gap-4  justify-center items-center md:w-1/3 mt-4 md:mt-0">
+                <div className="flex flex-wrap gap-5  justify-center items-center md:w-1/2 mt-4 md:mt-0">
                     {skills.map((skill) => (
                         <div key={skill.id} className=" flex justify-center items-center flex-col">
                             <div className="w-24 h-24 p-2 rounded-full border-2 border-accent">
@@ -95,7 +95,7 @@ const Experiences = () => {
                                 <img
                                     src={expericence.image}
                                     alt={expericence.company}
-                                    className="object-cover h-10 w-10"
+                                    className="object-cover w-10"
                                 />
                                 <div className="ml-4">
                                     <h1 className="text-xl text-accent font-bold">

@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
+import Form from "./components/Form";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Projects/>
       </div>
 
+      <Form />
       <Footer/>
 
     </div>
