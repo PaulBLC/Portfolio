@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@netlify/functions": "^3.0.0",
+    "@types/node": "^22.13.5",
     "lucide-react": "^0.476.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
