@@ -29,7 +29,10 @@ const About = () => {
             <Title title="À propos" />
             <div className="md:h-[600px] flex justify-center items-center">
                 <div className="hidden md:block">
-                    <img src={img} alt="" className="w-96 object-cover rounded-xl"
+                    <img 
+                        src={img} 
+                        alt="" 
+                        className="w-96 object-cover rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl" 
                     />
                 </div>
 

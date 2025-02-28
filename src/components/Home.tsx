@@ -29,10 +29,13 @@ const Home = () => {
                 </div>
 
                 <div className="md:ml-60">
-                    <img src={img} alt="" className="w-96 h-96 object-cover border-8 border-accent shadow-xl" 
-                    style={{
-                        borderRadius : "30% 70% 70% 30% / 67% 62% 38% 33%"
-                    }}
+                    <img 
+                        src={img} 
+                        alt="" 
+                        className="w-96 h-96 object-cover border-8 border-accent shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl" 
+                        style={{
+                            borderRadius: "30% 70% 70% 30% / 67% 62% 38% 33%"
+                        }}
                     />
                 </div>
             </div>
