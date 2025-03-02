@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react"
+import { Mail, Linkedin } from "lucide-react"
 import img from '../assets/img.jpg'
 import ThemeSelector from "./ThemeSelector"
 
@@ -9,7 +9,7 @@ const Home = () => {
                 <ThemeSelector />
             </div>
             <div className="flex flex-col-reverse md:flex-row justify-center items-center md:my-32 my-10">
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                     <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left mt-4 md:mt-0">
                         Bonjour , <br /> je suis {" "}
                         <span className="text-accent">Paul</span>
@@ -22,10 +22,20 @@ const Home = () => {
                         Diplômé de l'INSEEC Lyon en Data Analytics & Marketing Management. <br />
                         Je suis également interressé par le développement d'applications fullstack.
                     </p>
-                    <a href="#Contact" className="btn btn-accent md:w-fit">
-                        <Mail className="w-5 h-5" />
-                        Contactez-moi
-                    </a>
+                    <div className="flex gap-4 justify-center md:justify-start">
+                        <a href="#Contact" className="btn btn-accent md:w-fit">
+                            <Mail className="w-5 h-5" />
+                            Contactez-moi
+                        </a>
+                        <a 
+                            href="https://linkedin.com/in/paul-blanc-lyon" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="btn btn-accent md:w-fit"
+                        >
+                            <Linkedin className="w-5 h-5" />
+                        </a>
+                    </div>
                 </div>
 
                 <div className="md:ml-60">
