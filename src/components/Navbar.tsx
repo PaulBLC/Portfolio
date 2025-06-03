@@ -1,4 +1,5 @@
 import { ChartNetwork } from "lucide-react"
+import ThemeSelector from "./ThemeSelector"
 
 const Navbar = () => {
     return (
@@ -11,41 +12,44 @@ const Navbar = () => {
                 BLANC
             </a>
 
-            <ul
-                className="hidden md:flex space-x-4">
-                <li>
-                    <a href="#Home"
-                        className="btn btn-sm btn-ghost"
-                    >
-                        Accueil
-                    </a>
-                </li>
-                <li>
-                    <a href="#About"
-                        className="btn btn-sm btn-ghost"
-                    >
-                        À propos
-                    </a>
-                </li>
+            <div className="flex items-center gap-4">
+                <ul
+                    className="hidden md:flex space-x-4">
+                    <li>
+                        <a href="#Home"
+                            className="btn btn-sm btn-ghost"
+                        >
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#About"
+                            className="btn btn-sm btn-ghost"
+                        >
+                            À propos
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="#Experiences"
-                        className="btn btn-sm btn-ghost"
-                    >
-                        Mes expériences
-                    </a>
-                </li>
+                    <li>
+                        <a href="#Experiences"
+                            className="btn btn-sm btn-ghost"
+                        >
+                            Mes expériences
+                        </a>
+                    </li>
 
 
-                <li>
-                    <a href="#Projects"
-                        className="btn btn-sm btn-ghost"
-                    >
-                        Mes projets
-                    </a>
-                </li>
+                    <li>
+                        <a href="#Projects"
+                            className="btn btn-sm btn-ghost"
+                        >
+                            Mes projets
+                        </a>
+                    </li>
 
-            </ul>
+                </ul>
+                <ThemeSelector />
+            </div>
 
         </div>
     )
