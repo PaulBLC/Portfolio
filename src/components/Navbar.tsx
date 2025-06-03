@@ -1,7 +1,11 @@
 import { ChartNetwork } from "lucide-react"
 import ThemeSelector from "./ThemeSelector"
+import LanguageSwitcher from "./LanguageSwitcher"
+import { useTranslation } from "react-i18next"
 
 const Navbar = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="md:fixed top-0 left-0 right-0 w-full flex justify-center md:justify-between items-center p-1 md:p-4">
             <a href="#"
@@ -19,14 +23,14 @@ const Navbar = () => {
                         <a href="#Home"
                             className="btn btn-sm btn-ghost"
                         >
-                            Accueil
+                            {t('navigation.home')}
                         </a>
                     </li>
                     <li>
                         <a href="#About"
                             className="btn btn-sm btn-ghost"
                         >
-                            À propos
+                            {t('navigation.about')}
                         </a>
                     </li>
 
@@ -34,23 +38,23 @@ const Navbar = () => {
                         <a href="#Experiences"
                             className="btn btn-sm btn-ghost"
                         >
-                            Mes expériences
+                            {t('navigation.experiences')}
                         </a>
                     </li>
-
 
                     <li>
                         <a href="#Projects"
                             className="btn btn-sm btn-ghost"
                         >
-                            Mes projets
+                            {t('navigation.projects')}
                         </a>
                     </li>
-
                 </ul>
-                <ThemeSelector />
+                <div className="flex items-center gap-2">
+                    <LanguageSwitcher />
+                    <ThemeSelector />
+                </div>
             </div>
-
         </div>
     )
 }

@@ -4,6 +4,7 @@ import imgTAILWIND from "../assets/techno/tailwind.png"
 import imgTYPE from "../assets/techno/typescript.svg"
 import imgVITE from "../assets/techno/vite.png"
 import imgHOSTINGER from "../assets/techno/hostinger.png"
+import { useTranslation } from "react-i18next"
 
 const techs = [
     { name: "React", image: imgREACT },
@@ -13,6 +14,8 @@ const techs = [
 ];
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <footer className="footer footer-center p-10">
             <aside className="space-y-4">
@@ -24,7 +27,7 @@ const Footer = () => {
                 <div className="space-y-2">
                     <div className="flex gap-8 justify-center items-center">
                         <div className="space-y-2">
-                            <p className="text-sm opacity-75">Développé avec :</p>
+                            <p className="text-sm opacity-75">{t('footer.developedWith')}</p>
                             <div className="flex gap-4 justify-center items-center">
                                 {techs.map((tech) => (
                                     <div key={tech.name} className="tooltip" data-tip={tech.name}>
@@ -38,7 +41,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="space-y-2">
-                            <p className="text-sm opacity-75">Hébergé sous :</p>
+                            <p className="text-sm opacity-75">{t('footer.hostedOn')}</p>
                             <div className="flex justify-center items-center">
                                 <div className="tooltip" data-tip="Hostinger">
                                     <img 
@@ -51,7 +54,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p>Copyright © {new Date().getFullYear()} - Tous droits réservés</p>
+                <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
             </aside>
         </footer>
     )

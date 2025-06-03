@@ -1,0 +1,114 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "experiences": "Expériences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Bonjour, je suis",
+    "name": "Paul",
+    "role": "Développeur Full Stack",
+    "description": "Spécialisé dans la Data, le développement d'applications décisionnelles et la gestion de projets data.",
+    "description2": "J'aime mettre mes compétences techniques au service de problématiques business.",
+    "description3": "Diplômé de l'INSEEC Lyon en Data Analytics & Marketing Management.",
+    "description4": "Je porte également un grand intérêt pour l'automatisation des tâches avec n8n (IA agentique).",
+    "cta": "Voir mes projets"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "skills": {
+      "initiative": {
+        "title": "Initiative",
+        "description": "Je prends des initiatives pour améliorer les projets et proposer des solutions innovantes."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Je communique efficacement avec les équipes et les clients pour assurer le succès des projets."
+      },
+      "rigorous": {
+        "title": "Rigueur",
+        "description": "Je m'assure que chaque ligne de code est propre, maintenable et respecte les meilleures pratiques."
+      }
+    }
+  },
+  "experiences": {
+    "title": "Expériences",
+    "technicalStack": "Stack technique",
+    "certifications": "Certifications",
+    "freelance": {
+      "role": "Freelance Data",
+      "company": "Indépendant",
+      "period": "Depuis Dec 2024",
+      "description": [
+        "Transformation et nettoyage de données avec VBA / python",
+        "Visualisation de données ( Excel, Qlik, Power BI)",
+        "Création de workflow et automatisation de process avec n8n (IA agentique)",
+        "Mentorat Open Data University auprès de l'INSEEC Lyon ( 2 groupes d'étudiants)"
+      ]
+    },
+    "seb": {
+      "role": "Chef de projet E-commerce Junior",
+      "company": "Groupe SEB",
+      "period": "Sept 2023 - Août 2024",
+      "description": [
+        "Lead projet media intégrant des aspects techniques et business",
+        "Suivi des campagnes Google Ads, Amazon, Meta",
+        "Développement d'outil d'aide à la décision sur Qlik pour le top management",
+        "→ Accélération de la prise de décision pour top management",
+        "Data Management pour les équipes Marketing / E-commerce / D2C",
+        "→ Amélioration de la qualité et de l'exploitation de la donnée marché"
+      ]
+    },
+    "isd": {
+      "role": "Data Analyst / Développeur BI",
+      "company": "ISD - Limonest",
+      "period": "Sept 2019 - Août 2023",
+      "description": [
+        "Développement, mise en place de reporting et tableau de bords actuellement en service sur des sites clients (R / Power BI)",
+        "→ Réduction des coûts d'outils tiers et génération de revenus via leur exploitation",
+        "Modernisation des bases de données SQL et automatisation des tâches analytiques internes avec VBA",
+        "→ 48h/ mois de gagnées sur la facturation"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "demo": "Voir la démo",
+    "demoTitle": "Démo du projet",
+    "videoError": "Impossible de charger la vidéo",
+    "n8n": {
+      "title": "n8n - Automatisation de workflow",
+      "description": "Plateforme d'automatisation de workflow open source permettant de connecter différentes applications et services."
+    },
+    "portfolio": {
+      "title": "Portfolio - Site personnel",
+      "description": "Site web personnel développé avec React, TypeScript et Tailwind CSS, mettant en valeur mes compétences et projets."
+    }
+  },
+  "form": {
+    "title": "Contactez-moi",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Votre message...",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": {
+      "title": "Message envoyé !",
+      "text": "Je vous répondrai dans les plus brefs délais."
+    },
+    "error": {
+      "title": "Erreur",
+      "text": "Une erreur est survenue. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "developedWith": "Développé avec :",
+    "hostedOn": "Hébergé sous :",
+    "copyright": "© {{year}} Paul. Tous droits réservés."
+  }
+} 

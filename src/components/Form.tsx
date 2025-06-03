@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -30,8 +32,8 @@ const Form = () => {
         
         // Afficher l'alerte de succès
         await Swal.fire({
-          title: "Succès!",
-          text: "Votre message a été envoyé avec succès.",
+          title: t('form.success.title'),
+          text: t('form.success.text'),
           icon: "success",
           confirmButtonColor: "hsl(var(--a))" // Utilise la couleur accent de votre thème
         });
@@ -41,8 +43,8 @@ const Form = () => {
     } catch (error) {
       // Afficher l'alerte d'erreur
       await Swal.fire({
-        title: "Erreur!",
-        text: "Une erreur est survenue lors de l'envoi du message.",
+        title: t('form.error.title'),
+        text: t('form.error.text'),
         icon: "error",
         confirmButtonColor: "hsl(var(--er))" // Utilise la couleur error de votre thème
       });
@@ -54,16 +56,16 @@ const Form = () => {
   return (
     <div id="Contact" className="min-h-[70vh] flex items-center justify-center p-5 md:px-[15%]">
       <div className="w-full max-w-2xl">
-        <h2 className="text-4xl font-bold text-center mb-8">Contactez-moi</h2>
+        <h2 className="text-4xl font-bold text-center mb-8">{t('form.title')}</h2>
         <form onSubmit={onSubmit} className="space-y-4">
           <div>
             <label className="label">
-              <span className="label-text">Nom</span>
+              <span className="label-text">{t('form.name')}</span>
             </label>
             <input 
               type="text" 
               name="name"
-              placeholder="Votre nom" 
+              placeholder={t('form.namePlaceholder')} 
               className="input input-bordered w-full" 
               required
             />
@@ -71,12 +73,12 @@ const Form = () => {
           
           <div>
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text">{t('form.email')}</span>
             </label>
             <input 
               type="email" 
               name="email"
-              placeholder="votre@email.com" 
+              placeholder={t('form.emailPlaceholder')} 
               className="input input-bordered w-full" 
               required
             />
@@ -84,12 +86,12 @@ const Form = () => {
           
           <div>
             <label className="label">
-              <span className="label-text">Message</span>
+              <span className="label-text">{t('form.message')}</span>
             </label>
             <textarea 
               name="message"
               className="textarea textarea-bordered w-full h-32" 
-              placeholder="Votre message"
+              placeholder={t('form.messagePlaceholder')}
               required
             ></textarea>
           </div>
@@ -99,7 +101,7 @@ const Form = () => {
             className={`btn btn-accent w-full ${isLoading ? 'loading' : ''}`}
             disabled={isLoading}
           >
-            {isLoading ? 'Envoi en cours...' : 'Envoyer'}
+            {isLoading ? t('form.sending') : t('form.send')}
           </button>
         </form>
       </div>
