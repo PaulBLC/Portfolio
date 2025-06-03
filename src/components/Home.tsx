@@ -1,26 +1,29 @@
 import { Mail, Linkedin } from "lucide-react"
 import img from '../assets/img.jpg'
+import { useTranslation } from "react-i18next"
 
 const Home = () => {
+    const { t } = useTranslation();
+
     return (
         <div id="Home" className="relative">
             <div className="flex flex-col-reverse md:flex-row justify-center items-center md:my-32 my-10">
                 <div className="flex flex-col">
                     <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left mt-4 md:mt-0">
-                        Bonjour , <br /> je suis {" "}
-                        <span className="text-accent">Paul</span>
+                        {t('home.greeting')} <br /> je suis {" "}
+                        <span className="text-accent">{t('home.name')}</span>
                     </h1>
 
                     <p className="my-4 text-md text-center md:text-left">
-                        Spécialisé dans la Data, le développement d'applications décisionnelles et la gestion de projets data. <br />
-                        J'aime mettre mes compétences techniques pour répondre à des problématiques business. <br />
-                        Diplômé de l'INSEEC Lyon en Data Analytics & Marketing Management. <br />
-                        Je porte également un grand interet pour l'automatisation des tâches avec n8n. (ia agentique)
+                        {t('home.description')} <br />
+                        {t('home.description2')} <br />
+                        {t('home.description3')} <br />
+                        {t('home.description4')}
                     </p>
                     <div className="flex gap-4 justify-center md:justify-start">
                         <a href="#Contact" className="btn btn-accent md:w-fit">
                             <Mail className="w-5 h-5" />
-                            Contactez-moi
+                            {t('home.contact')}
                         </a>
                         <a 
                             href="https://linkedin.com/in/paul-blanc-lyon" 

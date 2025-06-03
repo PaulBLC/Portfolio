@@ -4,24 +4,22 @@ import { Brain, Users, Target } from "lucide-react";
 import imgSTID from "../assets/companies/stid.png";
 import imgSID from "../assets/companies/sid.png";
 import imgINSEEC from "../assets/companies/inseec.jpeg";
+import { useTranslation } from "react-i18next";
 
 const aboutSections = [
     {
         id: 1,
-        title: "Esprit d'initiative",
-        description: "Curieux et organisé, je sais prendre des initiatives et mener des projets de façon autonome.",
+        key: "initiative",
         icon: <Brain className="text-accent scale-150" />,
     },
     {
         id: 2,
-        title: "Bon communicant",
-        description: "Capable de coordonner les relations avec les prestataires et partenaires en mode Agile/Scrum.",
+        key: "communication",
         icon: <Users className="text-accent scale-150" />,
     },
     {
         id: 3,
-        title: "Rigoureux & Pédagogue",
-        description: "Méthodique dans l'analyse des données et capable de transmettre des connaissances techniques de façon claire.",
+        key: "rigorous",
         icon: <Target className="text-accent scale-150" />,
     },
 ];
@@ -51,9 +49,11 @@ const formations = [
 ];
 
 const About = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="bg-base-300 p-10 mb-10 md:mb-32" id="About">
-            <Title title="À propos" />
+            <Title title={t('about.title')} />
             <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                 {/* Section Formation */}
                 <div className="w-full md:w-1/3 flex flex-col space-y-4">
@@ -99,10 +99,10 @@ const About = () => {
                             </div>
                             <div className="md:ml-4 text-center md:text-left">
                                 <h2 className="text-xl font-bold mb-1">
-                                    {section.title}
+                                    {t(`about.skills.${section.key}.title`)}
                                 </h2>
                                 <p className="text-sm">
-                                    {section.description}
+                                    {t(`about.skills.${section.key}.description`)}
                                 </p>
                             </div>
                         </div>

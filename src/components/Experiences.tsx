@@ -9,13 +9,11 @@ import imgSQL from "../assets/techno/sql.png";
 import imgN8N from "../assets/techno/n8n.png";
 import imgALTERYX from "../assets/techno/alteryx.png";
 import imgDATAIKU from "../assets/techno/dataiku.png";
-
+import { useTranslation } from "react-i18next";
 
 import isd from "../assets/companies/isd.png";
 import seb from "../assets/companies/seb.png";
 import freelance from "../assets/companies/freelance.png";
-
-
 
 const dataSkills = [
     { id: 10, name: "R", image: imgR },
@@ -72,57 +70,31 @@ const certifications = [
 const experiences = [
     {
         id: 1,
-        role: "Freelance Data",
-        company: "Indépendant",
-        period: "Depuis Dec 2024",
-        description: [
-            "Transformation et nettoyage de données avec VBA / python",
-            "Visualisation de données ( Excel, Qlik, Power BI)",
-            "Création de workflow et automatisation de process avec n8n (IA agentique)",
-            "Mentorat Open Data University auprès de l'INSEEC Lyon ( 2 groupes d'étudiants)"
-        ],
+        key: "freelance",
         image: freelance,
     },
     {
         id: 2,
-        role: "Chef de projet E-commerce Junior",
-        company: "Groupe SEB",
-        period: "Sept 2023 - Août 2024",
-        description: [
-            "Lead projet media intégrant des aspects techniques et business",
-            "Suivi des campagnes Google Ads, Amazon, Meta",
-            "Développement d'outil d'aide à la décision sur Qlik pour le top management",
-            "   → Accélération de la prise de décision pour top management",
-            "Data Management pour les équipes Marketing / E-commerce / D2C",
-            "   → Amélioration de la qualité et de l'exploitation de la donnée marché"
-        ],
+        key: "seb",
         image: seb,
     },
     {
         id: 3,
-        role: "Data Analyst / Développeur BI ",
-        company: "ISD - Limonest",
-        period: "Sept 2019 - Août 2023",
-        description: [
-            "Développement, mise en place de reporting et tableau de bords actuellement en service sur des sites clients (R / Power BI)",
-            "   → Réduction des coûts d'outils tiers et génération de revenus via leur exploitation",
-            "Modernisation des bases de données SQL et automatisation des tâches analytiques internes avec VBA",
-            "   → 48h/ mois de gagnées sur la facturation"
-        ],
+        key: "isd",
         image: isd,
     },
 ];
 
-
-
 const Experiences = () => {
+    const { t } = useTranslation();
+
     return (
         <div id="Experiences">
-            <Title title="Expériences" />
+            <Title title={t('experiences.title')} />
             <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8">
                 <div className="flex flex-col gap-8 justify-center items-center w-full md:w-1/2 px-4 md:px-0">
                     <div className="w-full">
-                        <h3 className="text-xl font-bold text-accent mb-4 text-center">Stack Technique</h3>
+                        <h3 className="text-xl font-bold text-accent mb-4 text-center">{t('experiences.technicalStack')}</h3>
                         <div className="flex flex-wrap gap-5 justify-center items-center">
                             {dataSkills.map((skill) => (
                                 <div key={skill.id} className="flex justify-center items-center flex-col group">
@@ -138,7 +110,7 @@ const Experiences = () => {
                     </div>
 
                     <div className="w-full">
-                        <h3 className="text-xl font-bold text-accent mb-4 text-center">Certifications</h3>
+                        <h3 className="text-xl font-bold text-accent mb-4 text-center">{t('experiences.certifications')}</h3>
                         <div className="bg-base-200 p-5 rounded-xl shadow-lg w-full max-w-[500px] mx-auto">
                             <div className="space-y-3">
                                 {certifications.map((cert) => (
@@ -170,18 +142,18 @@ const Experiences = () => {
                             <div className="flex items-center">
                                 <img
                                     src={experience.image}
-                                    alt={experience.company}
+                                    alt={t(`experiences.${experience.key}.company`)}
                                     className="object-cover w-10"
                                 />
                                 <div className="ml-4">
                                     <h1 className="text-xl text-accent font-bold">
-                                        {experience.role} , {experience.company}
+                                        {t(`experiences.${experience.key}.role`)} , {t(`experiences.${experience.key}.company`)}
                                     </h1>
-                                    <span className="text-sm">{experience.period}</span>
+                                    <span className="text-sm">{t(`experiences.${experience.key}.period`)}</span>
                                 </div>
                             </div>
                             <ul className="list-disc ml-16 mt-2">
-                                {experience.description.map((desc, index) => (
+                                {(t(`experiences.${experience.key}.description`, { returnObjects: true }) as string[]).map((desc: string, index: number) => (
                                     <li key={index} className={`break-words ${desc.includes('→') ? 'list-none -ml-4' : ''}`}>
                                         {desc}
                                     </li>

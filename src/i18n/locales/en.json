@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experiences": "My Experiences",
+    "projects": "My Projects"
+  },
+  "home": {
+    "greeting": "Hello, I am",
+    "name": "Paul",
+    "description": "Specialized in Data, business intelligence application development and data project management.",
+    "description2": "I enjoy using my technical skills to solve business problems.",
+    "description3": "Graduated from INSEEC Lyon in Data Analytics & Marketing Management.",
+    "description4": "I also have a strong interest in task automation with n8n (agentic AI).",
+    "contact": "Contact me"
+  },
+  "about": {
+    "title": "About",
+    "skills": {
+      "initiative": {
+        "title": "Initiative",
+        "description": "Curious and organized, I know how to take initiatives and lead projects autonomously."
+      },
+      "communication": {
+        "title": "Good Communicator",
+        "description": "Able to coordinate relationships with providers and partners in Agile/Scrum mode."
+      },
+      "rigorous": {
+        "title": "Rigorous & Pedagogical",
+        "description": "Methodical in data analysis and able to transmit technical knowledge clearly."
+      }
+    }
+  },
+  "experiences": {
+    "title": "Experiences",
+    "technicalStack": "Technical stack",
+    "certifications": "Certifications",
+    "freelance": {
+      "role": "Freelance Data",
+      "company": "Self-employed",
+      "period": "Since Dec 2024",
+      "description": [
+        "Data transformation and cleaning with VBA / python",
+        "Data visualization (Excel, Qlik, Power BI)",
+        "Workflow creation and process automation with n8n (agentic AI)",
+        "Open Data University mentoring at INSEEC Lyon (2 student groups)"
+      ]
+    },
+    "seb": {
+      "role": "Junior E-commerce Project Manager",
+      "company": "SEB Group",
+      "period": "Sept 2023 - Aug 2024",
+      "description": [
+        "Lead media project integrating technical and business aspects",
+        "Monitoring Google Ads, Amazon, Meta campaigns",
+        "Development of decision support tool on Qlik for top management",
+        "→ Accelerated decision-making for top management",
+        "Data Management for Marketing / E-commerce / D2C teams",
+        "→ Improved market data quality and exploitation"
+      ]
+    },
+    "isd": {
+      "role": "Data Analyst / BI Developer",
+      "company": "ISD - Limonest",
+      "period": "Sept 2019 - Aug 2023",
+      "description": [
+        "Development and implementation of reporting and dashboards currently in service on client sites (R / Power BI)",
+        "→ Reduced third-party tool costs and revenue generation through their use",
+        "SQL database modernization and internal analytical task automation with VBA",
+        "   → 48h/month saved on billing"
+      ]
+    }
+  },
+  "projects": {
+    "title": "n8n Project",
+    "demo": "Demo",
+    "demoTitle": "Project Demo",
+    "videoError": "Your browser does not support video playback."
+  },
+  "form": {
+    "title": "Contact Me",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Your message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": {
+      "title": "Success!",
+      "text": "Your message has been sent successfully."
+    },
+    "error": {
+      "title": "Error!",
+      "text": "An error occurred while sending the message."
+    }
+  },
+  "footer": {
+    "developedWith": "Developed with:",
+    "hostedOn": "Hosted on:",
+    "copyright": "Copyright © {{year}} - All rights reserved"
+  }
+} 
