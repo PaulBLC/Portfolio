@@ -1,33 +1,48 @@
 {
   "navigation": {
     "home": "Home",
-    "about": "About",
-    "experiences": "My Experiences",
-    "projects": "My Projects"
+    "about": "About me",
+    "experiences": "Experiences",
+    "projects": "Projects",
+    "contact": "Contact"
   },
   "home": {
     "greeting": "Hello, I am",
-    "name": "Paul",
-    "description": "Specialized in Data, business intelligence application development and data project management.",
-    "description2": "I enjoy using my technical skills to solve business problems.",
-    "description3": "Graduated from INSEEC Lyon in Data Analytics & Marketing Management.",
-    "description4": "I also have a strong interest in task automation with n8n (agentic AI).",
+    "name": "Paul Blanc",
+    "description": "5 years of experience in data project management across diverse environments (industry, e-commerce, HR, Purchasing).\nCovers the entire decision-making chain: requirements gathering, user stories, agile monitoring, production deployment.\nDesigns decision-support tools (Power BI, Qlik, R Shiny, n8n) in direct collaboration with end users.",
     "contact": "Contact me"
   },
   "about": {
-    "title": "About",
+    "title": "About me",
+    "formations": {
+      "0": {
+        "diplome": "MSc Data Analytics & Marketing Management",
+        "ecole": "INSEEC Lyon",
+        "periode": "2022 - 2024"
+      },
+      "1": {
+        "diplome": "Professional Bachelor's Degree in Decision Support Systems",
+        "ecole": "Université Lyon 1",
+        "periode": "2020 - 2021"
+      },
+      "2": {
+        "diplome": "DUT Statistics and Decision Computing",
+        "ecole": "IUT Lyon 2",
+        "periode": "2018 - 2020"
+      }
+    },
     "skills": {
       "initiative": {
-        "title": "Initiative",
-        "description": "Curious and organized, I know how to take initiatives and lead projects autonomously."
+        "title": "Project coordination & management",
+        "description": "Managing data roadmaps, agile methods (Scrum, Kanban), turning ideas into concrete tools."
       },
       "communication": {
-        "title": "Good Communicator",
-        "description": "Able to coordinate relationships with providers and partners in Agile/Scrum mode."
+        "title": "Communication & support",
+        "description": "Workshop facilitation, mentoring, making data accessible to business teams."
       },
       "rigorous": {
-        "title": "Rigorous & Pedagogical",
-        "description": "Methodical in data analysis and able to transmit technical knowledge clearly."
+        "title": "Rigor & technical expertise",
+        "description": "Modeling, automation, BI and data solution design, process optimization."
       }
     }
   },
@@ -35,55 +50,86 @@
     "title": "Experiences",
     "technicalStack": "Technical stack",
     "certifications": "Certifications",
+    "certificationsList": [
+      {"name": "Google Analytics Certification", "issuer": "Google Skillshop"},
+      {"name": "Data Analyst in Power BI", "issuer": "DataCamp"},
+      {"name": "Twitch Gameplan Certification", "issuer": "Amazon"},
+      {"name": "Amazon DSP Campaigns Certification", "issuer": "Amazon"},
+      {"name": "Alteryx Designer Core Certification", "issuer": "Alteryx"},
+      {"name": "Amazon Ads Fundamentals Certification", "issuer": "Amazon"}
+    ],
     "freelance": {
-      "role": "Freelance Data",
+      "role": "Data Consultant - Freelance",
       "company": "Self-employed",
-      "period": "Since Dec 2024",
+      "period": "Dec 2024 - Dec 2025",
+      "duration": "1 year",
       "description": [
-        "Data transformation and cleaning with VBA / python",
-        "Data visualization (Excel, Qlik, Power BI)",
-        "Workflow creation and process automation with n8n (agentic AI)",
-        "Open Data University mentoring at INSEEC Lyon (2 student groups)"
+        "Development of a negotiation support tool for the purchasing department of SBM.",
+        "CoachingConcours.com website redesign for PASS-LAS students and tutors.",
+        "Complete creation of WordPress plugin and relational database.",
+        "Automated import and QCM generation, student and tutor dashboards.",
+        "Custom automation workflows with N8N hosted on VPS for craftsmen.",
+        "Data transformation and cleaning with Excel VBA / Python for SMEs. Result: 24 hours/month saved on invoicing."
       ]
     },
     "seb": {
       "role": "Junior E-commerce Project Manager",
-      "company": "SEB Group",
+      "company": "Groupe SEB - Ecully",
       "period": "Sept 2023 - Aug 2024",
+      "duration": "1 year",
       "description": [
-        "Lead media project integrating technical and business aspects",
-        "Monitoring Google Ads, Amazon, Meta campaigns",
-        "Development of decision support tool on Qlik for top management",
-        "→ Accelerated decision-making for top management",
-        "Data Management for Marketing / E-commerce / D2C teams",
-        "→ Improved market data quality and exploitation"
+        "Coordination of media project management between 8 countries and headquarters (France), on omnichannel advertising campaigns. Result: better data consistency and marketing actions on an international scale.",
+        "Production of e-commerce and sales analysis reports for global marketing departments (Data Studio / Qlik / Excel). Result: creation of a synthetic one-pager for decision-making by marketing directors across regions (APAC, EMEA)."
       ]
     },
     "isd": {
       "role": "Data Analyst / BI Developer",
       "company": "ISD - Limonest",
-      "period": "Sept 2019 - Aug 2023",
+      "period": "Sept 2019 – Aug 2023",
+      "duration": "4 years",
       "description": [
-        "Development and implementation of reporting and dashboards currently in service on client sites (R / Power BI)",
-        "→ Reduced third-party tool costs and revenue generation through their use",
-        "SQL database modernization and internal analytical task automation with VBA",
-        "   → 48h/month saved on billing"
+        "User requirements gathering, design and deployment of business dashboards (R Shiny / Power BI) for waste collection tracking (DID, DIB, DAOM...) at Sanofi, Suez, Biomérieux. Result: 100% internal tool, generating revenue without software overhead.",
+        "Functional specifications, feature prioritization and validation with field teams.",
+        "Automation of recurring tasks (VBA, Python). Result: 48 hours/month reduction in raw Excel file processing."
       ]
     }
   },
   "projects": {
-    "title": "n8n Project",
-    "demo": "Demo",
-    "demoTitle": "Project Demo",
-    "videoError": "Your browser does not support video playback."
+    "title": "Projects",
+    "demo": "Watch demo",
+    "demoTitle": "Demo",
+    "videoError": "Your browser does not support video playback.",
+    "website": "Website",
+    "list": {
+      "0": {
+        "title": "CoachingConcours.com Website Redesign",
+        "description": "Complete website redesign for PASS-LAS students and tutors. Creation of WordPress plugin and relational database. Automated import and QCM generation, student and tutor dashboards, individualized educational tracking."
+      },
+      "1": {
+        "title": "Dashboard of Cancelled Trains",
+        "description": "Interactive dashboard to visualize cancelled trains in France. Data from data.gouv.fr, map visualization, advanced filters, and statistical analysis."
+      },
+      "2": {
+        "title": "Google My Business Sheets Web Scraping",
+        "description": "This workflow allows retrieving unclaimed Google business listings."
+      },
+      "3": {
+        "title": "Portfolio",
+        "description": "My personal portfolio built with React, Tailwind CSS, and TypeScript."
+      },
+      "4": {
+        "title": "n8n Workflow - RSS Analysis",
+        "description": "This workflow daily reads new articles from an RSS feed, identifies those matching a defined topic using a language model, extracts and summarizes the content, then sends an HTML email with the filtered and summarized results."
+      }
+    }
   },
   "form": {
     "title": "Contact Me",
-    "name": "Name",
+    "name": "Your name",
     "namePlaceholder": "Your name",
-    "email": "Email",
+    "email": "your@email.com",
     "emailPlaceholder": "your@email.com",
-    "message": "Message",
+    "message": "Your message",
     "messagePlaceholder": "Your message",
     "send": "Send",
     "sending": "Sending...",
@@ -99,6 +145,6 @@
   "footer": {
     "developedWith": "Developed with:",
     "hostedOn": "Hosted on:",
-    "copyright": "Copyright © {{year}} - All rights reserved"
+    "copyright": "Copyright © {{year}} Paul. All rights reserved."
   }
 } 

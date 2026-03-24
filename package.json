@@ -10,13 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "@netlify/functions": "^3.0.0",
-    "@types/node": "^22.13.5",
-    "echarts": "^5.6.0",
-    "echarts-for-react": "^3.0.2",
-    "form-data": "~2.5.4",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^8.1.0",
     "lucide-react": "^0.476.0",
@@ -41,5 +36,10 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^7.3.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

@@ -1,35 +1,48 @@
 {
   "navigation": {
     "home": "Accueil",
-    "about": "À propos",
+    "about": "À propos de moi",
     "experiences": "Expériences",
     "projects": "Projets",
     "contact": "Contact"
   },
   "home": {
     "greeting": "Bonjour, je suis",
-    "name": "Paul",
-    "role": "Développeur Full Stack",
-    "description": "Spécialisé dans la Data, le développement d'applications décisionnelles et la gestion de projets data.",
-    "description2": "J'aime mettre mes compétences techniques au service de problématiques business.",
-    "description3": "Diplômé de l'INSEEC Lyon en Data Analytics & Marketing Management.",
-    "description4": "Je porte également un grand intérêt pour l'automatisation des tâches avec n8n (IA agentique).",
-    "cta": "Voir mes projets"
+    "name": "Paul Blanc",
+    "description": "5 ans d'expérience en gestion de projets data dans des environnements variés (industrie, e-commerce, RH, Achat).\nIntervient sur toute la chaîne décisionnelle : recueil des besoins, user stories, suivi agile, mise en production.\nCapable de concevoir des outils d'aide à la décision (Power BI, Qlik, R Shiny, n8n) en lien direct avec les utilisateurs.",
+    "contact": "Me contacter"
   },
   "about": {
     "title": "À propos de moi",
+    "formations": {
+      "0": {
+        "diplome": "MSc Data Analytics & Marketing Management",
+        "ecole": "INSEEC Lyon",
+        "periode": "2022 - 2024"
+      },
+      "1": {
+        "diplome": "Licence Professionnelle Systèmes d'information décisionnels",
+        "ecole": "Université Lyon 1",
+        "periode": "2020 - 2021"
+      },
+      "2": {
+        "diplome": "DUT Statistique et Informatique Décisionnelle",
+        "ecole": "IUT Lyon 2",
+        "periode": "2018 - 2020"
+      }
+    },
     "skills": {
       "initiative": {
-        "title": "Initiative",
-        "description": "Je prends des initiatives pour améliorer les projets et proposer des solutions innovantes."
+        "title": "Coordination & gestion de projet",
+        "description": "Pilotage de roadmap data, gestion agile (Scrum, Kanban), transformation d'idées en outils concrets."
       },
       "communication": {
-        "title": "Communication",
-        "description": "Je communique efficacement avec les équipes et les clients pour assurer le succès des projets."
+        "title": "Communication & accompagnement",
+        "description": "Animation d'ateliers, mentorat, vulgarisation de la data auprès des équipes métiers."
       },
       "rigorous": {
-        "title": "Rigueur",
-        "description": "Je m'assure que chaque ligne de code est propre, maintenable et respecte les meilleures pratiques."
+        "title": "Rigueur & expertise technique",
+        "description": "Modélisation, automatisation, conception de solutions BI et data, optimisation des process."
       }
     }
   },
@@ -37,73 +50,96 @@
     "title": "Expériences",
     "technicalStack": "Stack technique",
     "certifications": "Certifications",
+    "certificationsList": [
+      {"name": "Google Analytics Certification", "issuer": "Google Skillshop"},
+      {"name": "Data Analyst in Power BI", "issuer": "DataCamp"},
+      {"name": "Twitch Gameplan Certification", "issuer": "Amazon"},
+      {"name": "Amazon DSP Campaigns Certification", "issuer": "Amazon"},
+      {"name": "Alteryx Designer Core Certification", "issuer": "Alteryx"},
+      {"name": "Amazon Ads Fundamentals Certification", "issuer": "Amazon"}
+    ],
     "freelance": {
-      "role": "Freelance Data",
+      "role": "Consultant Data - Freelance",
       "company": "Indépendant",
-      "period": "Depuis Dec 2024",
+      "period": "Déc 2024 - Déc 2025",
+      "duration": "1 an",
       "description": [
-        "Transformation et nettoyage de données avec VBA / python",
-        "Visualisation de données ( Excel, Qlik, Power BI)",
-        "Création de workflow et automatisation de process avec n8n (IA agentique)",
-        "Mentorat Open Data University auprès de l'INSEEC Lyon ( 2 groupes d'étudiants)"
+        "Création d'un outil d'aide à la négociation pour le service achat de la société SBM.",
+        "Refonte du Site coachingconcours.com pour les étudiants et tuteurs en PASS LAS.",
+        "Création complète du plugin WordPress et de la base de données relationnelle.",
+        "Import automatisé et génération de QCM, Tableau de bords étudiants et tuteur.",
+        "Création d'automatisations personnalisées avec N8N et hébergé sur VPS pour des artisans.",
+        "Transformation et nettoyage de données avec Excel VBA / Python pour PME. Résultat : 24h/mois de gagnées sur la facturation."
       ]
     },
     "seb": {
       "role": "Chef de projet E-commerce Junior",
-      "company": "Groupe SEB",
+      "company": "Groupe SEB - Ecully",
       "period": "Sept 2023 - Août 2024",
+      "duration": "1 an",
       "description": [
-        "Lead projet media intégrant des aspects techniques et business",
-        "Suivi des campagnes Google Ads, Amazon, Meta",
-        "Développement d'outil d'aide à la décision sur Qlik pour le top management",
-        "→ Accélération de la prise de décision pour top management",
-        "Data Management pour les équipes Marketing / E-commerce / D2C",
-        "→ Amélioration de la qualité et de l'exploitation de la donnée marché"
+        "Coordination de la gestion de projets média entre 8 pays et le siège (France), sur les campagnes publicitaires omnicanales. Résultat : meilleure cohérence des données et des actions marketing à l'échelle internationale.",
+        "Production de rapports d'analyse e-commerce et ventes pour les directions marketing monde (Data Studio / Qlik / Excel). Résultat : création d'un one-pager synthétique pour la prise de décision par les directeurs marketing des différents pays (APAC, EMEA)."
       ]
     },
     "isd": {
       "role": "Data Analyst / Développeur BI",
       "company": "ISD - Limonest",
-      "period": "Sept 2019 - Août 2023",
+      "period": "Sept 2019 – Août 2023",
+      "duration": "4 ans",
       "description": [
-        "Développement, mise en place de reporting et tableau de bords actuellement en service sur des sites clients (R / Power BI)",
-        "→ Réduction des coûts d'outils tiers et génération de revenus via leur exploitation",
-        "Modernisation des bases de données SQL et automatisation des tâches analytiques internes avec VBA",
-        "→ 48h/ mois de gagnées sur la facturation"
+        "Recueil des besoins utilisateurs, conception et déploiement de tableaux de bord métiers (R Shiny / Power BI) pour le suivi de la collecte des déchets (DID, DIB, DAOM…) chez Sanofi, Suez, Biomérieux. Résultat : outil 100 % interne, générant des revenus sans surcoût logiciel.",
+        "Spécifications fonctionnelles, priorisation des fonctionnalités et validation avec les équipes terrain.",
+        "Automatisation des tâches récurrentes (VBA, Python). Résultat : réduction de 48h/mois sur le traitement des fichiers Excel bruts."
       ]
     }
   },
   "projects": {
     "title": "Projets",
     "demo": "Voir la démo",
-    "demoTitle": "Démo du projet",
-    "videoError": "Impossible de charger la vidéo",
-    "n8n": {
-      "title": "n8n - Automatisation de workflow",
-      "description": "Plateforme d'automatisation de workflow open source permettant de connecter différentes applications et services."
-    },
-    "portfolio": {
-      "title": "Portfolio - Site personnel",
-      "description": "Site web personnel développé avec React, TypeScript et Tailwind CSS, mettant en valeur mes compétences et projets."
+    "demoTitle": "Démonstration",
+    "videoError": "Votre navigateur ne supporte pas la lecture vidéo.",
+    "website": "Site web",
+    "list": {
+      "0": {
+        "title": "Refonte du Site coachingconcours.com",
+        "description": "Refonte complète du site pour les étudiants et tuteurs en PASS-LAS. Création du plugin WordPress et de la base de données relationnelle. Import automatisé et génération de QCM, tableaux de bords étudiants et tuteurs, suivi pédagogique individualisé."
+      },
+      "1": {
+        "title": "Dashboard des trains supprimés",
+        "description": "Dashboard interactif pour visualiser les trains supprimés en France. Données issues de data.gouv.fr, visualisation sur carte, filtres avancés, et analyse statistique."
+      },
+      "2": {
+        "title": "Google My Business Sheets Web Scraping",
+        "description": "Ce Workflow permet de récupérer les fiches Google non revendiquées."
+      },
+      "3": {
+        "title": "Portfolio",
+        "description": "Mon portfolio personnalisé avec React, Tailwind CSS et TypeScript."
+      },
+      "4": {
+        "title": "n8n Workflow - Analyse RSS",
+        "description": "Ce workflow lit quotidiennement les nouveaux articles d'un flux RSS, identifie ceux correspondant à un sujet défini via un modèle de langage, en extrait et résume le contenu, puis envoie un email HTML avec les résultats filtrés et résumés."
+      }
     }
   },
   "form": {
     "title": "Contactez-moi",
-    "name": "Nom",
+    "name": "Votre nom",
     "namePlaceholder": "Votre nom",
-    "email": "Email",
+    "email": "Votre email",
     "emailPlaceholder": "votre@email.com",
-    "message": "Message",
+    "message": "Votre message",
     "messagePlaceholder": "Votre message...",
     "send": "Envoyer",
     "sending": "Envoi en cours...",
     "success": {
-      "title": "Message envoyé !",
-      "text": "Je vous répondrai dans les plus brefs délais."
+      "title": "Succès !",
+      "text": "Votre message a bien été envoyé."
     },
     "error": {
-      "title": "Erreur",
-      "text": "Une erreur est survenue. Veuillez réessayer."
+      "title": "Erreur !",
+      "text": "Une erreur est survenue lors de l'envoi du message."
     }
   },
   "footer": {

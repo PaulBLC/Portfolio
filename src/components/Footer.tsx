@@ -35,6 +35,7 @@ const Footer = () => {
                                             src={tech.image} 
                                             alt={tech.name}
                                             className="w-8 h-8 object-contain hover:scale-110 transition-transform"
+                                            loading="lazy"
                                         />
                                     </div>
                                 ))}
@@ -48,6 +49,7 @@ const Footer = () => {
                                         src={imgHOSTINGER} 
                                         alt="Hostinger"
                                         className="w-8 h-8 object-contain hover:scale-110 transition-transform"
+                                        loading="lazy"
                                     />
                                 </div>
                             </div>

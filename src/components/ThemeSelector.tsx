@@ -1,16 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const themes = [
-    "dracula",
-    "light",
-    "dark",
-    "cupcake",
-    "bumblebee",
-    "emerald",
-    "corporate",
-    "synthwave",
-    "retro"
-];
+const themes = ["light", "dark", "nord", "sunset", "synthwave"];
 
 const ThemeSelector = () => {
     const [theme, setTheme] = useState("dark");
