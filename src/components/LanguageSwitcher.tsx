@@ -13,71 +13,81 @@ const LanguageSwitcher = () => {
 
   const languages = [
     { code: 'en', name: 'English', flag: 'gb' },
-    { code: 'fr', name: 'Français', flag: 'fr' }
+    { code: 'fr', name: 'Français', flag: 'fr' },
   ];
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+  const current = languages.find(l => l.code === i18n.language) || languages[0];
 
   return (
     <div className="relative">
-      {/* Version mobile - Menu déroulant */}
+      {/* Mobile — dropdown */}
       <div className="md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center gap-2 p-1.5 rounded-lg transition-all duration-300 ${
-            isOpen ? 'bg-base-200' : 'hover:bg-base-200'
-          }`}
+          className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[#8A8F98] hover:text-[#EDEDEF] hover:bg-white/[0.05] transition-all duration-200"
+          aria-label="Select language"
         >
-          <img 
-            src={`https://flagcdn.com/w40/${currentLanguage.flag}.png`}
-            srcSet={`https://flagcdn.com/w80/${currentLanguage.flag}.png 2x`}
-            alt={currentLanguage.name} 
-            className="w-7 h-5 object-cover rounded-sm shadow-sm"
+          <img
+            src={`https://flagcdn.com/w40/${current.flag}.png`}
+            srcSet={`https://flagcdn.com/w80/${current.flag}.png 2x`}
+            alt={current.name}
+            className="w-5 h-3.5 object-cover rounded-sm"
           />
-          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown
+            className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          />
         </button>
 
         {isOpen && (
-          <div className="absolute top-full right-0 mt-2 bg-base-200 rounded-lg shadow-lg py-2 z-50">
+          <div
+            className="absolute top-full right-0 mt-2 rounded-xl border border-white/[0.06] py-1 min-w-[140px] z-50"
+            style={{
+              background: 'rgba(10,10,12,0.95)',
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.5)',
+            }}
+          >
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => changeLanguage(lang.code)}
-                className={`flex items-center gap-2 w-full px-4 py-2 hover:bg-base-300 transition-colors ${
-                  i18n.language === lang.code ? 'bg-base-300' : ''
+                className={`flex items-center gap-2.5 w-full px-3 py-2 text-sm transition-colors duration-150 ${
+                  i18n.language === lang.code
+                    ? 'text-[#EDEDEF] bg-white/[0.06]'
+                    : 'text-[#8A8F98] hover:text-[#EDEDEF] hover:bg-white/[0.04]'
                 }`}
               >
-                <img 
+                <img
                   src={`https://flagcdn.com/w40/${lang.flag}.png`}
                   srcSet={`https://flagcdn.com/w80/${lang.flag}.png 2x`}
-                  alt={lang.name} 
-                  className="w-7 h-5 object-cover rounded-sm shadow-sm"
+                  alt={lang.name}
+                  className="w-5 h-3.5 object-cover rounded-sm"
                 />
-                <span className="text-sm">{lang.name}</span>
+                {lang.name}
               </button>
             ))}
           </div>
         )}
       </div>
 
-      {/* Version desktop - Boutons côte à côte */}
-      <div className="hidden md:flex gap-2">
+      {/* Desktop — flag buttons */}
+      <div className="hidden md:flex items-center gap-1">
         {languages.map((lang) => (
           <button
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
-            className={`p-1.5 rounded-lg transition-all duration-300 hover:scale-110 ${
-              i18n.language === lang.code 
-                ? 'ring-2 ring-accent bg-base-200' 
-                : 'hover:bg-base-200'
-            }`}
             title={lang.name}
+            className={`p-1.5 rounded-lg transition-all duration-200 ${
+              i18n.language === lang.code
+                ? 'bg-[#5E6AD2]/15 ring-1 ring-[#5E6AD2]/40'
+                : 'hover:bg-white/[0.05] opacity-60 hover:opacity-100'
+            }`}
           >
-            <img 
+            <img
               src={`https://flagcdn.com/w40/${lang.flag}.png`}
               srcSet={`https://flagcdn.com/w80/${lang.flag}.png 2x`}
-              alt={lang.name} 
-              className="w-7 h-5 object-cover rounded-sm shadow-sm"
+              alt={lang.name}
+              className="w-5 h-3.5 object-cover rounded-sm"
             />
           </button>
         ))}
@@ -86,4 +96,4 @@ const LanguageSwitcher = () => {
   );
 };
 
-export default LanguageSwitcher; 
+export default LanguageSwitcher;

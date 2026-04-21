@@ -1,4 +1,5 @@
 import Title from "./Title"
+import SpotlightCard from "./SpotlightCard"
 import imgR from "../assets/techno/r.png";
 import imgQLIK from "../assets/techno/qlik.png";
 import imgPYHTON from "../assets/techno/python.png";
@@ -11,6 +12,7 @@ import imgALTERYX from "../assets/techno/alteryx.png";
 import imgDATAIKU from "../assets/techno/dataiku.png";
 import imgDocker from "../assets/techno/docker.png";
 import { useTranslation } from "react-i18next";
+import { ExternalLink } from "lucide-react";
 
 import isd from "../assets/companies/isd.png";
 import seb from "../assets/companies/seb.png";
@@ -19,12 +21,12 @@ import freelance from "../assets/companies/freelance.png";
 const dataSkills = [
     { name: "R", image: imgR },
     { name: "Python", image: imgPYHTON },
-    { name: "N8N", image: imgN8N },    
+    { name: "N8N", image: imgN8N },
     { name: "SQL", image: imgSQL },
     { name: "Excel & VBA", image: imgEXCEL },
-    { name: "Qlik", image: imgQLIK },    
-    { name: "PowerBI", image: imgPOWERBI },    
-    { name: "Tableau", image: imgTABLEAU },        
+    { name: "Qlik", image: imgQLIK },
+    { name: "PowerBI", image: imgPOWERBI },
+    { name: "Tableau", image: imgTABLEAU },
     { name: "Alteryx", image: imgALTERYX },
     { name: "Dataiku", image: imgDATAIKU },
     { name: "Docker", image: imgDocker },
@@ -49,106 +51,137 @@ const Experiences = () => {
     const { t } = useTranslation();
 
     return (
-        <div id="Experiences">
+        <section id="Experiences" className="py-12 md:py-16 border-t border-white/[0.06]">
             <Title title={t('experiences.title')} />
-            <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-8">
-                <div className="flex flex-col gap-8 justify-center items-center w-full md:w-1/2 px-4 md:px-0">
-                    <div className="w-full">
-                        <h3 className="text-xl font-bold text-accent mb-4 text-center">{t('experiences.technicalStack')}</h3>
-                        <div className="flex flex-wrap gap-5 justify-center items-center">
+
+            <div className="flex flex-col-reverse md:flex-row justify-center items-start gap-8">
+
+                {/* Left column — stack + certs */}
+                <div className="flex flex-col gap-8 w-full md:w-1/2">
+
+                    {/* Technical stack */}
+                    <div>
+                        <h3 className="text-xs font-mono text-[#5E6AD2] tracking-widest uppercase mb-5 text-center">
+                            {t('experiences.technicalStack')}
+                        </h3>
+                        <div className="flex flex-wrap gap-4 justify-center items-center">
                             {dataSkills.map((skill) => (
-                                <div key={skill.name} className="flex justify-center items-center flex-col group">
-                                    <div className="w-16 h-16 md:w-20 md:h-20 p-2 rounded-full border-2 border-accent transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-accent/50">
-                                        <img src={skill.image} alt={skill.name}
-                                            className="object-cover rounded-full h-full w-full"
+                                <div key={skill.name} className="flex flex-col items-center gap-1.5 group">
+                                    <div
+                                        className="w-12 h-12 md:w-14 md:h-14 p-2 rounded-xl border border-white/[0.08] bg-white/[0.04] hover:border-[#5E6AD2]/40 hover:bg-[#5E6AD2]/10 transition-all duration-200 group-hover:scale-110"
+                                    >
+                                        <img
+                                            src={skill.image}
+                                            alt={skill.name}
+                                            className="object-contain h-full w-full"
                                             loading="lazy"
                                         />
                                     </div>
-                                    <span className="mt-2 text-sm group-hover:text-accent transition-colors">{skill.name}</span>
+                                    <span className="text-[10px] text-[#8A8F98] group-hover:text-[#EDEDEF] transition-colors duration-200">
+                                        {skill.name}
+                                    </span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="w-full">
-                        <h3 className="text-xl font-bold text-accent mb-4 text-center">{t('experiences.certifications')}</h3>
-                        <div className="bg-base-200 p-5 rounded-xl shadow-lg w-full max-w-[500px] mx-auto">
+                    {/* Certifications */}
+                    <div>
+                        <h3 className="text-xs font-mono text-[#5E6AD2] tracking-widest uppercase mb-5 text-center">
+                            {t('experiences.certifications')}
+                        </h3>
+                        <SpotlightCard className="p-5">
                             <div className="space-y-3">
                                 {certificationLinks.map((link, i) => (
-                                    <div key={i} className="flex flex-col">
-                                        <a 
-                                            href={link} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="text-primary hover:text-accent transition-colors break-words"
-                                        >
-                                            {t(`experiences.certificationsList.${i}.name`)}
-                                        </a>
-                                        <span className="text-sm text-base-content/70">
-                                            {t(`experiences.certificationsList.${i}.issuer`)}
-                                        </span>
-                                    </div>
+                                    <a
+                                        key={i}
+                                        href={link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-start justify-between gap-3 group/cert py-2 border-b border-white/[0.05] last:border-0"
+                                    >
+                                        <div>
+                                            <p className="text-sm text-[#EDEDEF] group-hover/cert:text-[#5E6AD2] transition-colors duration-200">
+                                                {t(`experiences.certificationsList.${i}.name`)}
+                                            </p>
+                                            <p className="text-xs text-[#8A8F98] mt-0.5">
+                                                {t(`experiences.certificationsList.${i}.issuer`)}
+                                            </p>
+                                        </div>
+                                        <ExternalLink className="w-3.5 h-3.5 text-[#8A8F98] group-hover/cert:text-[#5E6AD2] flex-shrink-0 mt-0.5 transition-colors duration-200" />
+                                    </a>
                                 ))}
                             </div>
-                        </div>
+                        </SpotlightCard>
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/2 px-4 md:px-0 flex flex-col space-y-4">
+                {/* Right column — experience cards */}
+                <div className="w-full md:w-1/2 flex flex-col gap-4">
                     {experienceKeys.map(({ key, image }) => {
                         const descriptions = t(`experiences.${key}.description`, { returnObjects: true }) as string[];
                         return (
-                            <div
-                                key={key}
-                                className="flex flex-col bg-base-200 p-5 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-1"
-                            >
-                                <div className="flex items-center">
-                                    <img
-                                        src={image}
-                                        alt={t(`experiences.${key}.company`)}
-                                        className="object-cover w-10"
-                                        loading="lazy"
-                                    />
-                                    <div className="ml-4">
-                                        <h1 className="text-lg text-accent font-bold">
+                            <SpotlightCard key={key} className="p-5">
+                                {/* Header */}
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.04] flex items-center justify-center flex-shrink-0 p-1.5">
+                                        <img
+                                            src={image}
+                                            alt={t(`experiences.${key}.company`)}
+                                            className="object-contain w-full h-full"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h3 className="text-sm font-semibold text-[#5E6AD2] leading-snug">
                                             {t(`experiences.${key}.role`)}
-                                        </h1>
-                                        <p className="text-sm font-medium">{t(`experiences.${key}.company`)}</p>
-                                        <div className="flex items-center gap-2 mt-0.5">
-                                            <span className="text-xs opacity-70">{t(`experiences.${key}.period`)}</span>
+                                        </h3>
+                                        <p className="text-xs font-medium text-[#EDEDEF] mt-0.5">
+                                            {t(`experiences.${key}.company`)}
+                                        </p>
+                                        <div className="flex items-center gap-2 mt-1">
+                                            <span className="text-xs text-[#8A8F98]">
+                                                {t(`experiences.${key}.period`)}
+                                            </span>
                                             {t(`experiences.${key}.duration`, { defaultValue: '' }) && (
-                                                <span className="badge badge-accent badge-xs">{t(`experiences.${key}.duration`)}</span>
+                                                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium border border-[#5E6AD2]/30 bg-[#5E6AD2]/10 text-[#5E6AD2]">
+                                                    {t(`experiences.${key}.duration`)}
+                                                </span>
                                             )}
                                         </div>
                                     </div>
                                 </div>
-                                <ul className="list-disc ml-16 mt-2 space-y-1.5">
+
+                                {/* Description */}
+                                <ul className="space-y-1.5 pl-4 border-l border-white/[0.06]">
                                     {descriptions.map((desc, index) => {
                                         const resultMatch = desc.match(/(Résultat\s*:|Result:)/);
                                         if (resultMatch && resultMatch.index !== undefined) {
                                             const before = desc.substring(0, resultMatch.index).trim();
                                             const result = desc.substring(resultMatch.index);
                                             return (
-                                                <li key={index} className="break-words">
+                                                <li key={index} className="text-xs text-[#8A8F98] leading-relaxed">
                                                     {before}
-                                                    <div className="mt-1 text-accent font-semibold text-sm">
+                                                    <span className="block mt-1 text-[#5E6AD2] font-medium">
                                                         → {result}
-                                                    </div>
+                                                    </span>
                                                 </li>
                                             );
                                         }
                                         return (
-                                            <li key={index} className="break-words">{desc}</li>
+                                            <li key={index} className="text-xs text-[#8A8F98] leading-relaxed">
+                                                {desc}
+                                            </li>
                                         );
                                     })}
                                 </ul>
-                            </div>
+                            </SpotlightCard>
                         );
                     })}
                 </div>
             </div>
-        </div>
-    )
-}
+        </section>
+    );
+};
 
-export default Experiences
+export default Experiences;

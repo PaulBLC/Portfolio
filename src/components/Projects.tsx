@@ -4,7 +4,7 @@ import img1 from '../assets/projects/1.webp';
 import img5 from '../assets/projects/5.webp';
 import img7 from '../assets/projects/7.webp';
 import img2 from '../assets/projects/2.webp';
-import { Github, Video, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Github, Video, ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
 import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import useEmblaCarousel from "embla-carousel-react";
@@ -95,71 +95,69 @@ const Projects = () => {
     };
 
     const renderLinks = (project: typeof projects[number]) => {
-        const links: { href: string; label: string; icon: React.ReactNode; style: string; onClick?: () => void }[] = [];
-
-        if (project.type === 'demo' && project.videoPath) {
-            links.push({
-                href: "#",
-                label: t('projects.demo'),
-                icon: <Video className="w-4 h-4" />,
-                style: "btn-accent",
-                onClick: () => openVideo(project.videoPath!),
-            });
-        }
-        if (project.github) {
-            links.push({
-                href: project.github,
-                label: "GitHub",
-                icon: <Github className="w-4 h-4" />,
-                style: "btn-neutral",
-            });
-        }
-        if (project.website) {
-            links.push({
-                href: project.website,
-                label: t('projects.website'),
-                icon: <ExternalLink className="w-4 h-4" />,
-                style: "btn-primary",
-            });
-        }
-
         return (
             <div
-                className="flex mt-auto gap-2 pt-2"
+                className="flex mt-auto gap-2 pt-3"
                 onPointerDownCapture={(e) => e.stopPropagation()}
             >
-                {links.map((link) =>
-                    link.onClick ? (
-                        <button
-                            key={link.label}
-                            className={`btn btn-sm flex-1 ${link.style}`}
-                            onClick={(e) => { e.preventDefault(); link.onClick!(); }}
-                        >
-                            {link.icon}
-                            {link.label}
-                        </button>
-                    ) : (
-                        <a
-                            key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`btn btn-sm flex-1 ${link.style}`}
-                        >
-                            {link.icon}
-                            {link.label}
-                        </a>
-                    )
+                {project.type === 'demo' && project.videoPath && (
+                    <button
+                        onClick={(e) => { e.preventDefault(); openVideo(project.videoPath!); }}
+                        className="inline-flex items-center gap-1.5 flex-1 justify-center px-3 py-1.5 rounded-lg text-xs font-medium text-white transition-all duration-200 active:scale-[0.98]"
+                        style={{
+                            background: '#5E6AD2',
+                            boxShadow: '0 0 0 1px rgba(94,106,210,0.4), 0 2px 8px rgba(94,106,210,0.25)',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = '#6872D9')}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = '#5E6AD2')}
+                    >
+                        <Video className="w-3.5 h-3.5" />
+                        {t('projects.demo')}
+                    </button>
+                )}
+                {project.github && (
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 flex-1 justify-center px-3 py-1.5 rounded-lg text-xs font-medium text-[#EDEDEF] transition-all duration-200 active:scale-[0.98]"
+                        style={{
+                            background: 'rgba(255,255,255,0.05)',
+                            boxShadow: '0 0 0 1px rgba(255,255,255,0.06)',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.05)')}
+                    >
+                        <Github className="w-3.5 h-3.5" />
+                        GitHub
+                    </a>
+                )}
+                {project.website && (
+                    <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 flex-1 justify-center px-3 py-1.5 rounded-lg text-xs font-medium text-[#EDEDEF] transition-all duration-200 active:scale-[0.98]"
+                        style={{
+                            background: 'rgba(255,255,255,0.05)',
+                            boxShadow: '0 0 0 1px rgba(255,255,255,0.06)',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.05)')}
+                    >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        {t('projects.website')}
+                    </a>
                 )}
             </div>
         );
     };
 
     return (
-        <div className="mt-10" id="Projects">
+        <section id="Projects" className="py-12 md:py-16 border-t border-white/[0.06]">
             <Title title={t('projects.title')} />
 
-            {/* Carrousel */}
+            {/* Carousel */}
             <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex -ml-4">
                     {projects.map((project) => (
@@ -167,87 +165,125 @@ const Projects = () => {
                             key={project.id}
                             className="flex-[0_0_100%] min-w-0 pl-4 md:flex-[0_0_33.333%]"
                         >
-                            <div className="bg-base-300 p-6 h-full rounded-xl shadow-lg flex flex-col">
+                            <div
+                                className="rounded-2xl border border-white/[0.06] h-full flex flex-col overflow-hidden transition-all duration-300 hover:border-white/[0.10]"
+                                style={{
+                                    background: 'linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+                                    boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 2px 20px rgba(0,0,0,0.4)',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.boxShadow =
+                                        '0 0 0 1px rgba(255,255,255,0.10), 0 8px 40px rgba(0,0,0,0.5), 0 0 60px rgba(94,106,210,0.06)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.boxShadow =
+                                        '0 0 0 1px rgba(255,255,255,0.06), 0 2px 20px rgba(0,0,0,0.4)';
+                                }}
+                            >
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full rounded-xl h-48 object-cover"
+                                    className="w-full h-44 object-cover"
                                     loading="lazy"
                                 />
-                                <div className="mt-3">
-                                    <h3 className="font-bold text-lg">{project.title}</h3>
-                                    <p className="text-sm mt-1 line-clamp-3">{project.description}</p>
+                                {/* Top gradient edge over image */}
+                                <div className="h-px w-full bg-gradient-to-r from-transparent via-[#5E6AD2]/20 to-transparent -mt-px" />
+
+                                <div className="p-5 flex flex-col flex-1">
+                                    <h3 className="font-semibold text-sm text-[#EDEDEF] leading-snug">
+                                        {project.title}
+                                    </h3>
+                                    <p className="text-xs text-[#8A8F98] mt-2 line-clamp-3 leading-relaxed">
+                                        {project.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-1.5 mt-3">
+                                        {project.technologies.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium border border-[#5E6AD2]/25 bg-[#5E6AD2]/10 text-[#5E6AD2]"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    {renderLinks(project)}
                                 </div>
-                                <div className="flex flex-wrap gap-2 my-3">
-                                    {project.technologies.map((tech) => (
-                                        <span key={tech} className="badge badge-accent badge-sm">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                                {renderLinks(project)}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Navigation : fleches + dots */}
-            <div className="flex items-center justify-center gap-4 mt-6">
-                <button onClick={scrollPrev} className="btn btn-circle btn-sm btn-ghost">
-                    <ChevronLeft className="w-5 h-5" />
+            {/* Navigation */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+                <button
+                    onClick={scrollPrev}
+                    className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/[0.08] text-[#8A8F98] hover:text-[#EDEDEF] hover:border-white/[0.14] hover:bg-white/[0.05] transition-all duration-200"
+                    aria-label="Previous"
+                >
+                    <ChevronLeft className="w-4 h-4" />
                 </button>
-                <div className="flex gap-2">
+
+                <div className="flex gap-1.5">
                     {scrollSnaps.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => scrollTo(index)}
-                            className={`h-2.5 rounded-full transition-all duration-300 ${
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
                                 index === selectedIndex
-                                    ? "bg-accent w-8"
-                                    : "bg-base-content/30 hover:bg-base-content/50 w-2.5"
+                                    ? "bg-[#5E6AD2] w-6"
+                                    : "bg-white/20 hover:bg-white/40 w-1.5"
                             }`}
                             aria-label={`Slide ${index + 1}`}
                         />
                     ))}
                 </div>
-                <button onClick={scrollNext} className="btn btn-circle btn-sm btn-ghost">
-                    <ChevronRight className="w-5 h-5" />
+
+                <button
+                    onClick={scrollNext}
+                    className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/[0.08] text-[#8A8F98] hover:text-[#EDEDEF] hover:border-white/[0.14] hover:bg-white/[0.05] transition-all duration-200"
+                    aria-label="Next"
+                >
+                    <ChevronRight className="w-4 h-4" />
                 </button>
             </div>
 
-            {/* Modal video */}
+            {/* Video modal */}
             {isVideoOpen && (
                 <div
-                    className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
+                    className="fixed inset-0 flex items-center justify-center z-50"
+                    style={{ background: 'rgba(2,2,3,0.85)', backdropFilter: 'blur(12px)' }}
                     onClick={() => setIsVideoOpen(false)}
                 >
                     <div
-                        className="bg-base-300 p-4 rounded-lg w-[90%] max-w-4xl"
+                        className="rounded-2xl border border-white/[0.08] w-[92%] max-w-4xl overflow-hidden"
+                        style={{
+                            background: 'rgba(10,10,12,0.95)',
+                            boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 24px 80px rgba(0,0,0,0.7)',
+                        }}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold">{t('projects.demoTitle')}</h3>
+                        <div className="flex justify-between items-center px-5 py-4 border-b border-white/[0.06]">
+                            <h3 className="text-sm font-semibold text-[#EDEDEF]">
+                                {t('projects.demoTitle')}
+                            </h3>
                             <button
-                                className="btn btn-sm btn-circle btn-ghost"
                                 onClick={() => setIsVideoOpen(false)}
+                                className="w-7 h-7 flex items-center justify-center rounded-lg text-[#8A8F98] hover:text-[#EDEDEF] hover:bg-white/[0.06] transition-all duration-200"
+                                aria-label="Close"
                             >
-                                ✕
+                                <X className="w-4 h-4" />
                             </button>
                         </div>
-                        <video
-                            className="w-full rounded-lg"
-                            controls
-                            autoPlay
-                        >
+                        <video className="w-full" controls autoPlay>
                             <source src={currentVideo} type="video/mp4" />
                             {t('projects.videoError')}
                         </video>
                     </div>
                 </div>
             )}
-        </div>
-    )
-}
+        </section>
+    );
+};
 
 export default Projects;
